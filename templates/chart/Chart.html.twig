@@ -1,0 +1,160 @@
+{% block stylesheets %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous">
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+
+
+		<div
+			class="col-md-12 col-lg-6">
+
+			<!-- Invoice Chart -->
+			<div class="card card-chart">
+				<div class="card-header">
+					<h4 class="card-title">Nombre Appartement/Residence</h4>
+				</div>
+				<div class="card-body">
+					<canvas id="Residence" width="400" height="100"></canvas>
+				</div>
+			</div>
+			<!-- /Invoice Chart -->
+
+		</div>
+		<div
+			class="col-md-12 col-lg-6">
+
+			<!-- Invoice Chart -->
+			<div class="card card-chart">
+				<div class="card-header">
+					<h4 class="card-title">Message et Reservation / Etat</h4>
+				</div>
+				<div class="card-body">
+					<canvas id="Etat" width="400" height="100"></canvas>
+				</div>
+			</div>
+			<!-- /Invoice Chart -->
+
+		</div>
+	</div>
+	<div class="row">
+		<div
+			class="col-md-12 col-lg-6">
+
+			<!-- Invoice Chart -->
+			<div class="card card-chart">
+				<div class="card-header">
+					<h4 class="card-title">Nombre de Message et de Reservation</h4>
+				</div>
+				<div class="card-body">
+					<canvas id="MsgAndReserv" width: 50%; margin: auto; height="100"></canvas>
+				</div>
+			</div>
+			<!-- /Invoice Chart -->
+
+		</div>
+		<div
+			class="col-md-12 col-lg-6">
+
+			<!-- Invoice Chart -->
+			<div class="card card-chart">
+				<div class="card-header">
+					<h4 class="card-title">Appartement /Type</h4>
+				</div>
+				<div class="card-body">
+					<canvas id="Type" width: 50%; margin: auto; height="100"></canvas>
+				</div>
+			</div>
+			<!-- /Invoice Chart -->
+
+		</div>
+
+
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+	<script>
+
+		let Etat = document.querySelector("#Etat")
+let EtatGraph = new Chart(Etat, {
+type: "doughnut",
+data: {
+labels: [
+"Traité", "Non Traité"
+],
+datasets: [
+{
+label: "Répartition des Etat",
+data: {{ EtatCount|raw }},
+backgroundColor: ["green", "pink"]
+}
+]
+}
+})
+
+let Residence = document.querySelector("#Residence")
+let ResidenceGraph = new Chart(Residence, {
+type: "doughnut",
+data: {
+labels: [
+"IRIS1", "IRIS2"
+],
+datasets: [
+{
+label: "Répartition des catégories",
+data: {{ AppartementCount|raw }},
+backgroundColor: ["red", "blue"]
+}
+]
+}
+})
+
+let MsgAndReserv = document.querySelector("#MsgAndReserv")
+let MsgAndReservGraph = new Chart(MsgAndReserv, {
+type: "doughnut",
+data: {
+labels: [
+"Reservation", "Message"
+],
+datasets: [
+{
+label: "Répartition des catégories",
+data: {{ MesgOrReservCount|raw }},
+backgroundColor: ["blue", "orange"]
+}
+]
+}
+})
+
+let Type = document.querySelector("#Type")
+let TypeGraph = new Chart(Type, {
+type: "doughnut",
+data: {
+labels: [
+"S+1",
+"S+2",
+"S+3",
+"Commercial",
+"Bureau",
+"Jardin"
+],
+datasets: [
+{
+label: "Répartition des Type",
+data: {{ TypeCount|raw }},
+backgroundColor: [
+"green",
+"blue",
+"red",
+"yellow",
+"purple",
+"orange"
+]
+}
+]
+}
+})
+	</script>
+{% endblock %}

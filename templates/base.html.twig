@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+	{% block head %}
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="description" content="Architecture & Interior HTML Template">
+			<meta name="author" content="DynamicLayers">
+			<title>
+				{% block title %}Diar RACHED
+				{% endblock %}
+			</title>
+
+			{% block stylesheets %}
+				{{ encore_entry_link_tags('app') }}
+				<link href="{{ asset ('favicon.png') }}" rel="icon">
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/fontawesome.min.css')}}">
+
+				<!-- Themify Icons CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/themify-icons.css')}}">
+				<!-- Elegant Line Icons CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/elegant-line-icons.css')}}">
+				<!-- Elegant Icons CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/elegant-font-icons.css')}}">
+				<!-- Flat Icons CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/flaticon.css')}}">
+				<!-- animate CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/animate.min.css')}}">
+				<!-- Bootstrap CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/bootstrap.min.css')}}">
+				<!-- Slicknav CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/slicknav.min.css')}}">
+				<!--Slick Slider-->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/slick.css')}}">
+				<!--Slider CSS-->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/slider.css')}}">
+				<!-- Venobox CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/venobox/venobox.css')}}">
+				<!-- OWL-Carousel CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/owl.carousel.css')}}">
+				<!-- Main CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets/css/main.css')}}">
+				<!-- Responsive CSS -->
+				<link rel="stylesheet" href="{{asset ('assets/css/responsive.css')}}">
+
+				<script src="{{asset ('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
+
+
+			{% endblock %}
+
+
+		</head>
+	{% endblock %}
+	<body data-spy=" scroll" data-target="#navmenu" data-offset="70">
+		<div class="site-preloader-wrap">
+			<div class="spinner"></div>
+		</div>
+		<!-- Preloader -->
+		{% block header %}
+			<header id="header" class="header-section">
+				<div class="container">
+
+					<nav class="navbar ">
+						<a href="{{ path('app_homepage') }}" class="navbar-brand"><img src="{{asset ('assets/img/ppp/logo.png')}}" alt="Arkit"></a>
+						<div class="d-flex menu-wrap">
+							<div id="mainmenu" class="mainmenu">
+								<ul class="nav">
+									<li>
+										<a data-scroll class="nav-link active" href="{{ path('app_homepage') }}">Accueil
+											<span class="sr-only">(current)</span>
+										</a>
+									</li>
+									<li>
+										<a href="{{ path('A_propos') }}">A Propos</a>
+									</li>
+									<li>
+										<a href="{{path('app_reservation_new')}}">Réserver</a>
+									</li>
+									<li>
+										<a href="{{path('app_residence_index1')}}">PROJETS EN COURS</a>
+
+									</li>
+									<li>
+										<a href="#">Nos Références
+										</a>
+										<ul class="widget-links">
+											<li>
+												<a href="{{ path('Diar_Rached') }}">Résidence Diar Rached</a>
+											</li>
+											<li>
+												<a href="{{path('Kacem_City')}}">Résidence kacem City</a>
+											</li>
+											<li>
+												<a href="{{path('Halima')}}">Résidence Halima</a>
+											</li>
+											<li>
+												<a href="{{path('Kacem_Palace')}}">Résidence kacem Palace</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="{{path('contact')}}">Contact</a>
+									</li>
+									<li class="phone">
+										<i class="fa fa-phone"></i>
+										(+216) 20 929 999</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<!--.header-section -->
+		{% endblock %}
+		<div class="header-height"></div>
+
+
+		{% block body %}
+			<style>
+				.row {
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-ms-flex-wrap: wrap;
+					flex-wrap: wrap;
+					margin-right: -15px;
+					margin-left: -15px
+				}
+			</style>
+			<div id="main-slider" class="dl-slider">
+				<div class="single-slide">
+					<div class="bg-img kenburns-top-right" style="background-image: url({{asset ('assets/img/ppp/halima/affiche1.jpg')}});"></div>
+					<div class="overlay"></div>
+					<div class="slider-content-wrap d-flex align-items-center text-left">
+						<div class="container">
+							<div class="slider-content">
+								<div class="dl-caption medium">
+									<div class="inner-layer">
+										<div data-animation="fade-in-right" data-delay="1s">Residence Halima</div>
+									</div>
+								</div>
+								<div class="dl-caption dl-border" data-animation="fade-in-left" data-delay="0s"></div>
+								<div class="dl-caption big">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2s">La maison de rêve pourrait être</div>
+									</div>
+								</div>
+								<div class="dl-caption big">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2.5s">plus proche que vous ne le pensez.
+										</div>
+									</div>
+								</div>
+								<div class="dl-caption small">
+									<div
+										class="inner-layer"><!-- <div data-animation="fade-in-left" data-delay="3s">Business is the activity of making
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				                                    money.</div>-->
+									</div>
+								</div>
+								<!--<div class="dl-btn-group">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            <div class="inner-layer">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                <a href="#" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">View Projects
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                    <i class="arrow_right"></i></a>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            </div>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                        </div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Slide-2-->
+				<div class="single-slide">
+					<div class="bg-img kenburns-top-right" style="background-image: url({{asset ('assets/img/ppp/iris1/acc1.jpg')}});"></div>
+					<div class="overlay"></div>
+					<div class="slider-content-wrap d-flex align-items-center text-left">
+						<div class="container">
+							<div class="slider-content">
+								<div class="dl-caption medium">
+									<div class="inner-layer">
+										<div data-animation="fade-in-right" data-delay="1s">Residence IRIS1</div>
+									</div>
+								</div>
+								<div class="dl-caption dl-border" data-animation="fade-in-left" data-delay="0s"></div>
+								<div class="dl-caption big">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2s">La maison de rêve pourrait être</div>
+									</div>
+								</div>
+								<div class="dl-caption big">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2.5s">plus proche que vous ne le pensez.
+										</div>
+									</div>
+								</div>
+								<div class="dl-caption small">
+									<div
+										class="inner-layer"><!-- <div data-animation="fade-in-left" data-delay="3s">Business is the activity of making
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				                                    money.</div>-->
+									</div>
+								</div>
+								<!--<div class="dl-btn-group">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            <div class="inner-layer">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                <a href="#" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">View Projects
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                    <i class="arrow_right"></i></a>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            </div>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                        </div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Slide-1-->
+				<div class="single-slide">
+					<div class="bg-img kenburns-top-right" style="background-image: url({{asset ('assets/img/ppp/iris1/acc2.jpg')}});"></div>
+					<div class="overlay"></div>
+					<div class="slider-content-wrap d-flex align-items-center text-left">
+						<div class="container">
+							<div class="slider-content">
+								<div class="dl-caption medium">
+									<div class="inner-layer">
+										<div data-animation="fade-in-right" data-delay="1s">Residence IRIS2</div>
+									</div>
+								</div>
+								<div class="dl-caption dl-border" data-animation="fade-in-left" data-delay="0s"></div>
+								<div class="dl-caption big">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2s">La maison de rêve pourrait être</div>
+									</div>
+								</div>
+								<div class="dl-caption big">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2.5s">plus proche que vous ne le pensez.
+										</div>
+									</div>
+								</div>
+								<div class="dl-caption small">
+									<div
+										class="inner-layer"><!-- <div data-animation="fade-in-left" data-delay="3s">Business is the activity of making
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				                                    money.</div>-->
+									</div>
+								</div>
+								<!--<div class="dl-btn-group">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            <div class="inner-layer">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                <a href="#" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">View Projects
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                    <i class="arrow_right"></i></a>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            </div>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                        </div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="single-slide">
+					<div class="bg-img kenburns-top-right" style="background-image: url({{asset ('assets/img/ppp/diar-rached/affiche2.jpg')}});"></div>
+					<div class="overlay"></div>
+					<div class="slider-content-wrap d-flex align-items-center text-left">
+						<div class="container">
+							<div class="slider-content">
+								<div class="dl-caption medium">
+									<div class="inner-layer">
+										<div data-animation="fade-in-right" data-delay="1s">Residence Diar Rached</div>
+									</div>
+								</div>
+								<div class="dl-caption dl-border" data-animation="fade-in-left" data-delay="0s"></div>
+								<div class="dl-caption big">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2s">La maison de rêve pourrait être</div>
+									</div>
+								</div>
+								<div class="dl-caption big">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2.5s">plus proche que vous ne le pensez.
+										</div>
+									</div>
+								</div>
+								<div class="dl-caption small">
+									<div
+										class="inner-layer"><!-- <div data-animation="fade-in-left" data-delay="3s">Business is the activity of making
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				                                    money.</div>-->
+									</div>
+								</div>
+								<!--<div class="dl-btn-group">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            <div class="inner-layer">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                <a href="#" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">View Projects
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                    <i class="arrow_right"></i></a>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            </div>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                        </div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Slide-3-->
+				<div class="single-slide">
+					<div class="bg-img kenburns-top-right" style="background-image: url({{asset ('assets/img/ppp/RésidencekacemCity/affiche.jpg')}});"></div>
+					<div class=" overlay"></div>
+					<div class="slider-content-wrap d-flex align-items-center text-left">
+						<div class="container">
+							<div class="slider-content">
+								<div class="dl-caption medium">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="1s">Residence Kacem City</div>
+									</div>
+								</div>
+								<div class="dl-caption dl-border" data-animation="fade-in-left" data-delay="4s"></div>
+								<div class="dl-caption big">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2s">La maison de rêve pourrait être</div>
+									</div>
+								</div>
+								<div class="dl-caption big">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2.5s">plus proche que vous ne le pensez.
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Slide-4-->
+				<div class="single-slide">
+					<div class="bg-img kenburns-top-right" style="background-image: url({{ asset('assets/img/ppp/diar-rached/aff1.jpg')}});"></div>
+					<div class="overlay"></div>
+					<div class="slider-content-wrap d-flex align-items-center text-left">
+						<div class="container">
+							<div class="slider-content">
+								<div class="dl-caption medium3">
+									<div class="inner-layer">
+										<div data-animation="fade-in-right" data-delay="1s">Residence kacem Palace</div>
+									</div>
+								</div>
+								<div class="dl-caption dl-border" data-animation="fade-in-left" data-delay="0s"></div>
+								<div class="dl-caption big3">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2s">La maison de rêve pourrait être</div>
+									</div>
+								</div>
+								<div class="dl-caption big3">
+									<div class="inner-layer">
+										<div data-animation="fade-in-left" data-delay="2.5s">plus proche que vous ne le pensez.
+										</div>
+									</div>
+								</div>
+								<!--<div class="dl-caption small">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            <div class="inner-layer">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                <div data-animation="fade-in-left" data-delay="3s">Business is the activity of making
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                    money.</div>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            </div>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                        </div>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                        <div class="dl-btn-group">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            <div class="inner-layer">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                <a href="#" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">View Projects
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                    <i class="arrow_right"></i></a>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                            </div>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                        </div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Slide-5-->
+			</div><!--/.slider-section-->{% endblock %}
+		{% block footer %}
+			<section class="widget-section bg-dark padding">
+				<div class="container2">
+					<div class="row">
+						<div class="col-lg-3 col-sm-6 sm-padding">
+							<div class="widget-content">
+								<a href="{{ path('app_homepage') }}"><img src="{{asset ('assets/img/ppp/logo.png')}}" alt="brand"></a>
+								<p>Opérateur global d’immobilier spécialisé dans le résidentiel haut standing en Tunisie</p>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6 sm-padding">
+							<div class="widget-content">
+								<h4>Entreprise</h4>
+								<ul class="widget-links">
+									<li>
+										<a href="{{ path('A_propos') }}">A propos</a>
+									</li>
+
+									<li>
+										<a href="{{path('contact')}}">Contact</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6 sm-padding">
+							<div class="widget-content">
+								<h4>Projets En Cours</h4>
+								<ul class="widget-links">
+									<li>
+										<a href="{{path('app_residence_index1')}}">Projets</a>
+									</li>
+									<li>
+										<a href="{{path('app_reservation_new')}}">Réserver</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-sm-6 sm-padding">
+							<div class="widget-content">
+								<h4>Nos Références</h4>
+								<ul class="widget-links">
+									<li>
+										<a href="{{path('Diar_Rached')}}">Résidence Diar Rached</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_City')}}">Résidence Kacem City</a>
+									</li>
+									<li>
+										<a href="{{path('Halima')}}">Résidence Halima</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_Palace')}}">Résidence Kacem Palace</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6 sm-padding">
+							<div class="widget-links">
+								<h4>Coordonnées</h4>
+								<ul>
+									<li>16 Boulevard de l'environnement, l'aouina</li>
+									<li>immob.diyar.rached@gmail.com</li>
+									<li>(+216) 20 929 999</li>
+									<li>(+216) 24 727 205</li>
+									<li>(+216) 24 727 628</li>
+								</ul>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section><!--/.widget-section-->{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+			<a data-scroll href="#header" id="scroll-to-top">
+				<i class="arrow_carrot-up"></i>
+			</a>
+
+			<!-- jQuery Lib -->
+			<script src="{{asset ('assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+			<!-- Bootstrap JS -->
+			<script src="{{asset ('assets/js/vendor/bootstrap.min.js')}}"></script>
+			<!-- Tether JS -->
+			<script src="{{asset ('assets/js/vendor/tether.min.js')}}"></script>
+			<!-- Slicknav JS -->
+			<script src="{{asset ('assets/js/vendor/jquery.slicknav.min.js')}}"></script>
+			<!-- OWL-Carousel JS -->
+			<script src="{{asset ('assets/js/vendor/owl.carousel.min.js')}}"></script>
+			<!-- Smooth Scroll JS -->
+			<script src="{{asset ('assets/js/vendor/smooth-scroll.min.js')}}"></script>
+			<!-- Venobox JS -->
+			<script src="{{asset ('assets/js/vendor/venobox.min.js')}}"></script>
+			<!-- Ajaxchimp JS -->
+			<script src="{{asset ('assets/js/vendor/jquery.ajaxchimp.min.js')}}"></script>
+			<!--Slick Slider-->
+			<script src="{{asset ('assets/js/vendor/slick.min.js')}}"></script>
+			<!--Counterup JS-->
+			<script src="{{asset ('assets/js/vendor/jquery.counterup.min.js')}}"></script>
+			<!--Waypoints JS-->
+			<script src="{{asset ('assets/js/vendor/jquery.waypoints.v2.0.3.min.js')}}"></script>
+			<!--YTPlayer Js-->
+			<script src="{{asset ('assets/js/vendor/jquery.mb.YTPlayer.min.js')}}"></script>
+			<!-- Wow JS -->
+			<script src="{{asset ('assets/js/vendor/wow.min.js')}}"></script>
+			<!-- Google Map JS -->
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPH8h1UpcK01BdcvoZeOzq-_wJqRxN1Pc"></script>
+			<!-- Main JS -->
+			<script src="{{asset ('assets/js/main.js')}}"></script>
+		{% endblock %}
+	</body>
+</html>

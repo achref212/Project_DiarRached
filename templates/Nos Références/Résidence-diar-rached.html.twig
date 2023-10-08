@@ -1,0 +1,211 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Diar Rached
+{% endblock %}
+{% block header %}
+	<header id="header" class="header-section">
+		<div class="container">
+
+			<nav class="navbar ">
+				<a href="{{ path('app_homepage') }}" class="navbar-brand"><img src="{{asset ('assets/img/ppp/logo.png')}}" alt="Diar"></a>
+				<div class="d-flex menu-wrap">
+					<div id="mainmenu" class="mainmenu">
+						<ul class="nav">
+							<li>
+								<a href="{{ path('app_homepage') }}">Accueil
+									<span class="sr-only">(current)</span>
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('A_propos') }}">A Propos</a>
+
+							</li>
+							<li>
+								<a href="{{path('app_reservation_new')}}">Réserver</a>
+							</li>
+							<li>
+								<a href="{{path('app_residence_index1')}}">PROJETS EN COURS</a>
+
+							</li>
+							<li>
+								<a data-scroll class="nav-link active">Nos Références
+								</a>
+								<ul class="widget-links">
+									<li>
+										<a href="{{path('Diar_Rached')}}">Résidence Diar Rached</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_City')}}">Résidence Kacem City</a>
+									</li>
+									<li>
+										<a href="{{path('Halima')}}">Résidence Halima</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_Palace')}}">Résidence Kacem Palace</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="{{path('contact')}}">Contact</a>
+							</li>
+							<li class="phone">
+								<i class="fa fa-phone"></i>
+								(+216) 20 929 999</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--.header-section -->
+{% endblock %}
+{% block body %}
+	<style>
+		.row {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			margin-right: -15px;
+			margin-left: -15px
+		}
+	</style>
+	<div id="main-slider" class="dl-slider">
+		<div class="single-slide">
+			<div class="bg-img kenburns-top" style="background-image: url({{ asset('assets/img/ppp/diar-rached/affiche.jpg')}});"></div>
+			<div class="overlay"></div>
+			<div class="slider-content-wrap d-flex align-items-center text-left">
+				<div class="container">
+					<div class="slider-content">
+						<div class="dl-caption medium">
+							<div class="inner-layer">
+								<div data-animation="fade-in-right" data-delay="1s">Résidentiel</div>
+							</div>
+						</div>
+						<div class="dl-caption dl-border" data-animation="fade-in-left" data-delay="0s"></div>
+						<div class="dl-caption big">
+							<div class="inner-layer">
+								<div data-animation="fade-in-left" data-delay="2s">Project</div>
+							</div>
+						</div>
+						<div class="dl-caption big">
+							<div class="inner-layer">
+								<div data-animation="fade-in-left" data-delay="2.5s">Diar Rached
+								</div>
+							</div>
+						</div>
+						<div class="dl-caption small">
+							<div
+								class="inner-layer"><!-- <div data-animation="fade-in-left" data-delay="3s">Business is the activity of making
+																																																																																																			                                    money.</div>-->
+							</div>
+						</div>
+						<!--<div class="dl-btn-group">
+																																																																		                            <div class="inner-layer">
+																																																																		                                <a href="#" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">View Projects
+																																																																		                                    <i class="arrow_right"></i></a>
+																																																																		                            </div>
+																																																																		                        </div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Slide-1-->
+		<div class="single-slide">
+			<div class="bg-img kenburns-bottom-right" style="background-image: url({{ asset('assets/img/ppp/diar-rached/affiche2.jpg')}});"></div>
+
+			<div class=" overlay"></div>
+			<div class="slider-content-wrap d-flex align-items-center text-left">
+				<div class="container">
+					<div class="slider-content">
+						<div class="dl-caption medium">
+							<div class="inner-layer">
+								<div data-animation="fade-in-right" data-delay="1s">Diar Rached</div>
+							</div>
+						</div>
+						<div class="dl-caption dl-border" data-animation="fade-in-left" data-delay="0s"></div>
+						<div class="dl-caption big">
+							<div class="inner-layer">
+								<div data-animation="fade-in-left" data-delay="2s">La maison de rêve pourrait être</div>
+							</div>
+						</div>
+						<div class="dl-caption big">
+							<div class="inner-layer">
+								<div data-animation="fade-in-left" data-delay="2.5s">plus proche que vous ne le pensez.
+								</div>
+							</div>
+						</div>
+						<div class="dl-caption small">
+							<div
+								class="inner-layer"><!-- <div data-animation="fade-in-left" data-delay="3s">Business is the activity of making
+																																																																																																			                                    money.</div>-->
+							</div>
+						</div>
+						<!--<div class="dl-btn-group">
+																																																																		                            <div class="inner-layer">
+																																																																		                                <a href="#" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">View Projects
+																																																																		                                    <i class="arrow_right"></i></a>
+																																																																		                            </div>
+																																																																		                        </div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Slide-2-->
+		<div class="single-slide">
+			<div class="bg-img kenburns-top" style="background-image: url({{ asset('assets/img/ppp/diar-rached/affiche4.jpg')}});"></div>
+			<div class="overlay"></div>
+			<div class="slider-content-wrap d-flex align-items-center text-left">
+				<div class="container"></div>
+			</div>
+		</div>
+		<!--Slide-3-->
+		<div class="single-slide">
+			<div class="bg-img kenburns-top-right" style="background-image: url({{ asset('assets/img/ppp/diar-rached/affiche3.jpg') }});"></div>
+			<div class=" overlay"></div>
+			<div class="slider-content-wrap d-flex align-items-center text-left">
+				<div class="container">
+					<div class="slider-content">
+						<div class="dl-caption medium">
+							<div class="inner-layer">
+								<div data-animation="fade-in-left" data-delay="1s">Diar Rached</div>
+							</div>
+						</div>
+						<div class="dl-caption dl-border" data-animation="fade-in-left" data-delay="4s"></div>
+						<div class="dl-caption big">
+							<div class="inner-layer">
+								<div data-animation="fade-in-left" data-delay="2s">Ouvre la porte à</div>
+							</div>
+						</div>
+						<div class="dl-caption big">
+							<div class="inner-layer">
+								<div data-animation="fade-in-left" data-delay="2.5s">meilleur type d'intérieur.</div>
+							</div>
+						</div>
+						<!--<div class="dl-caption small">
+																																																																		                            <div class="inner-layer">
+																																																																		                                <div data-animation="fade-in-left" data-delay="3s">Business is the activity of making
+																																																																		                                    money.</div>
+																																																																		                            </div>
+																																																																		                        </div>
+																																																																		                        <div class="dl-btn-group">
+																																																																		                            <div class="inner-layer">
+																																																																		                                <a href="#" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">View Projects
+																																																																		                                    <i class="arrow_right"></i></a>
+																																																																		                            </div>
+																																																																		                        </div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Slide-4-->
+		<div class="single-slide">
+			<div class="bg-img kenburns-top" style="background-image:url({{ asset('assets/img/ppp/diar-rached/affiche5.jpg')}});"></div>
+			<div class="overlay"></div>
+			<div class="slider-content-wrap d-flex align-items-center text-left">
+				<div class="container"></div>
+			</div>
+		</div>
+		<!--Slide-5-->
+	</div><!--/.slider-section-->{% endblock %}

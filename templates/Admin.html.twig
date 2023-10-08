@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html
+	lang="en">
+
+	<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:20 GMT -->
+	{% block head %}
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+			<title>
+				{% block title %}Diar RACHED-Dashboard
+				{% endblock %}
+			</title>
+			{% block stylesheets %}
+				<!-- Favicon -->
+				<link
+				rel="shortcut icon" type="image/x-icon" href="{{ asset ('favicon.png') }}">
+				<!-- Venobox CSS -->
+				<link rel="stylesheet" href="{{asset ('assets/css/venobox/venobox.css')}}">
+				<!-- OWL-Carousel CSS -->
+				<!-- Bootstrap CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets1/css/bootstrap.min.css')}}"> <!-- Fontawesome CSS -->
+				<link
+				rel="stylesheet" href="{{asset ('assets1/css/font-awesome.min.css')}}">
+
+				<!-- Feathericon CSS -->
+				<link rel="stylesheet" href="{{asset ('assets1/css/feathericon.min.css')}}">
+
+				<link
+				rel="stylesheet" href="{{asset ('assets1/plugins/morris/morris.css')}}">
+
+				<!-- Main CSS -->
+				<link rel="stylesheet" href="{{asset ('assets1/css/style.css')}}">
+
+
+			{% endblock %}
+		</head>
+	{% endblock %}
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+
+			{% block header %}
+				<!-- Header -->
+				<div
+					class="header">
+
+					<!-- Logo -->
+					<div class="header-left">
+						<a href="{{ path('app_homeAdmin') }}" class="logo">
+							<img src="{{asset ('assets/img/ppp/logo2.png')}}" width="60" height="60" alt="Logo">
+						</a>
+						<a href="{{ path('app_homeAdmin') }}" class="logo logo-small">
+							<img src="{{asset ('assets/img/ppp/logo2.png')}}" alt="Logo" width="50" height="50">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<a href="javascript:void(0);" id="toggle_btn">
+						<i class="fe fe-text-align-left"></i>
+					</a>
+
+
+					<!-- Mobile Menu Toggle -->
+					<a class="mobile_btn" id="mobile_btn">
+						<i class="fa fa-bars"></i>
+					</a>
+					<!-- /Mobile Menu Toggle -->
+
+					<!-- Header Right Menu -->
+					<ul
+						class="nav user-menu">
+
+
+						<!-- User Menu -->
+						<li class="nav-item dropdown has-arrow">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+								<span class="user-img"><img class="rounded-circle" src="{{ vich_uploader_asset(app.user, 'imageFile') }}" width="31" alt="Ryan Taylor"></span>
+							</a>
+							<div class="dropdown-menu">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="{{ vich_uploader_asset(app.user, 'imageFile') }}" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6>{{ app.user.nom }}
+											{{ app.user.prenom }}</h6>
+										<p class="text-muted mb-0">Administrateur</p>
+									</div>
+								</div>
+								<a class="dropdown-item" href="{{path ('profile')}}">Mon profil</a>
+								<!--<a class="dropdown-item" href="settings.html">Settings</a>-->
+								<a class="dropdown-item" href="{{path ('app_logout')}}">Se déconnecter</a>
+							</div>
+						</li>
+						<!-- /User Menu -->
+
+					</ul>
+					<!-- /Header Right Menu -->
+
+				</div>
+				<!-- /Header -->
+			{% endblock %}
+
+			{% block Sidebar %}
+				<!-- Sidebar -->
+				<div class="sidebar" id="sidebar">
+					<div class="sidebar-inner slimscroll">
+						<div id="sidebar-menu" class="sidebar-menu">
+							<ul>
+
+								<li class="active">
+									<a href="{{ path('app_homeAdmin') }}">
+										<i class="fe fe-star"></i>
+										<span>Tableau de bord</span>
+									</a>
+								</li>
+
+								<li>
+									<a href="{{ path('app_residence_new') }}">
+										<i class="fe fe-home"></i>
+										<span>Résidences</span>
+									</a>
+								</li>
+								<li>
+									<a href="{{ path('app_reservation_index') }}">
+										<i class="fe fe-document"></i>
+										<span>Reservation</span>
+									</a>
+								</li>
+								<li>
+									<a href="{{ path('app_message') }}">
+										<i class="fe fe-mail"></i>
+										<span>Message</span>
+									</a>
+								</li>
+								<li>
+									<a href="{{path ('profile')}}">
+										<i class="fe fe-user-plus"></i>
+										<span>Profile</span>
+									</a>
+								</li>
+
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /Sidebar -->
+			{% endblock %}
+
+
+			<!-- Page Wrapper -->
+			<div class="page-wrapper">
+
+				<div class="content container-fluid">
+					{% block pageheader %}
+						<!-- Page Header -->
+						<div class="page-header">
+							<div class="row">
+								<div class="col-sm-12">
+									<h3 class="page-title">Bienvenue
+										{{ app.user.nom }}
+										{{ app.user.prenom }}</h3>
+									<ul class="breadcrumb">
+										<li class="breadcrumb-item active">Tableau de bord</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						{{ include('chart/Chart.html.twig') }}
+						<!-- /Page Header -->
+					{% endblock %}
+
+
+					{% block body %}
+						<div class="row">
+							<div class="col-md-12"></div>
+						</div>
+					{% endblock %}
+
+
+				</div>
+			</div>
+			<!-- /Page Wrapper -->
+
+		</div>
+		<!-- /Main Wrapper -->
+
+		{% block javascripts %}
+			<!-- Custom JS -->
+			<!-- /Main Wrapper -->
+			<!-- jQuery --><script src="{{asset ('assets1/js/jquery-3.2.1.min.js')}}"> </script>
+
+			<!-- Bootstrap Core JS -->
+			<script src="{{asset ('assets1/js/popper.min.js')}}"></script>
+			<script src="{{asset ('assets1/js/bootstrap.min.js')}}"></script>
+
+			<!-- Slimscroll JS -->
+			<script src="{{asset ('assets1/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
+
+			<!-- Datatables JS -->
+			<script src="{{asset ('assets1/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+			<script src="{{asset ('assets1/plugins/datatables/datatables.min.js')}}"></script>
+			<script src="{{asset ('assets1/js/script.js')}}"></script>
+
+			<!-- jQuery Lib -->
+			<script src="{{asset ('assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+			<!-- Bootstrap JS -->
+			<script src="{{asset ('assets/js/vendor/bootstrap.min.js')}}"></script>
+			<!-- Tether JS -->
+			<script src="{{asset ('assets/js/vendor/tether.min.js')}}"></script>
+			<!-- Slicknav JS -->
+			<script src="{{asset ('assets/js/vendor/jquery.slicknav.min.js')}}"></script>
+			<!-- OWL-Carousel JS -->
+			<script src="{{asset ('assets/js/vendor/owl.carousel.min.js')}}"></script>
+			<!-- Smooth Scroll JS -->
+			<script src="{{asset ('assets/js/vendor/smooth-scroll.min.js')}}"></script>
+			<!-- Venobox JS -->
+			<script src="{{asset ('assets/js/vendor/venobox.min.js')}}"></script>
+			<!-- Ajaxchimp JS -->
+			<script src="{{asset ('assets/js/vendor/jquery.ajaxchimp.min.js')}}"></script>
+			<!--Slick Slider-->
+			<script src="{{asset ('assets/js/vendor/slick.min.js')}}"></script>
+			<!--Counterup JS-->
+			<script src="{{asset ('assets/js/vendor/jquery.counterup.min.js')}}"></script>
+			<!--Waypoints JS-->
+			<script src="{{asset ('assets/js/vendor/jquery.waypoints.v2.0.3.min.js')}}"></script>
+			<!--YTPlayer Js-->
+			<script src="{{asset ('assets/js/vendor/jquery.mb.YTPlayer.min.js')}}"></script>
+			<!-- Wow JS -->
+			<script src="{{asset ('assets/js/vendor/wow.min.js')}}"></script>
+			<!-- Google Map JS -->
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPH8h1UpcK01BdcvoZeOzq-_wJqRxN1Pc"></script>
+			<!-- Main JS -->
+			<script src="{{asset ('assets/js/main.js')}}"></script>
+
+			<script src="{{asset ('assets1/js/jquery-3.2.1.min.js')}}"></script>
+
+			<!-- Bootstrap Core JS -->
+			<script src="{{asset ('assets1/js/popper.min.js')}}"></script>
+			<script src="{{asset ('assets1/js/bootstrap.min.js')}}"></script>
+
+			<!-- Slimscroll JS -->
+			<script src="{{asset ('assets1/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
+
+			<script src="{{asset ('assets1/plugins/raphael/raphael.min.js')}}"></script>
+			<script src="{{asset ('assets1/plugins/morris/morris.min.js')}}"></script>
+			<script src="{{asset ('assets1/js/chart.morris.js')}}"></script>
+
+			<!-- Custom JS -->
+			<script src="{{asset ('assets1/js/script.js')}}"></script>
+		{% endblock %}
+
+	</body>
+</html>

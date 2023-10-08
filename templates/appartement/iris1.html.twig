@@ -1,0 +1,142 @@
+{% extends 'Admin.html.twig' %}
+
+{% block title %}Appartements
+{% endblock %}
+{% block Sidebar %}
+	<!-- Sidebar -->
+	<div class="sidebar" id="sidebar">
+		<div class="sidebar-inner slimscroll">
+			<div id="sidebar-menu" class="sidebar-menu">
+				<ul>
+
+					<li>
+						<a href="{{ path('app_homeAdmin') }}">
+							<i class="fe fe-star"></i>
+							<span>Tableau de bord</span>
+						</a>
+					</li>
+
+					<li class="active">
+						<a href="{{ path('app_residence_new') }}">
+							<i class="fe fe-home"></i>
+							<span>Résidences</span>
+						</a>
+					</li>
+					<li>
+						<a href="{{ path('app_reservation_index') }}">
+							<i class="fe fe-document"></i>
+							<span>Reservation</span>
+						</a>
+					</li>
+					<li>
+						<a href="{{ path('app_message') }}">
+							<i class="fe fe-mail"></i>
+							<span>Message</span>
+						</a>
+					</li>
+					<li>
+						<a href="{{path ('profile')}}">
+							<i class="fe fe-user-plus"></i>
+							<span>Profile</span>
+						</a>
+					</li>
+
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /Sidebar -->
+{% endblock %}
+{% block pageheader %}
+	<!-- Page Header -->
+	<div class="page-header">
+		<div class="row">
+			<div class="col-sm-7 col-auto">
+				<h3 class="page-title">Residences</h3>
+				<ul class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a href="{{ path('app_homeAdmin') }}">Tableau de bord</a>
+					</li>
+					<li class="breadcrumb-item active">Residences</li>
+					<li class="breadcrumb-item active">IRIS1</li>
+				</ul>
+			</div>
+			<div class="col-sm-5 col">
+				<a href="{{ path('app_appartement_new1', {'id': residence.id}) }}" class="btn btn-primary float-right mt-2">Add</a>
+
+			</div>
+		</div>
+	</div>
+	<!-- /Page Header -->
+{% endblock %}
+{% block body %}
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="table-responsive">
+
+
+						<table class="table mb-0">
+							<thead>
+								<tr>
+
+									<th>Nom</th>
+									<th>Etage</th>
+									<th>Type</th>
+									<th>Surface</th>
+									<th>Etat</th>
+									<th>Image</th>
+									<th class=" text-right">actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for appartement in appartements %}
+
+									<tr>
+
+										<td>{{ appartement.nom }}</td>
+										<td>{{ appartement.etage }}</td>
+										<td>{{ appartement.type }}</td>
+										<td>{{ appartement.surface }}</td>
+										<td>{{ appartement.etat }}</td>
+										<td>
+											{% if appartement.image %}
+												<a href="{{ vich_uploader_asset(appartement, 'imageFile') }}" class="btn-outline-primary img-popup" data-gall="myGallery">Voir Plan</a>
+											{% else %}
+												No Image
+											{% endif %}
+										</td>
+										<td class="text-right">
+											<div class="actions">
+												<a class="btn btn-sm bg-success-light" href="{{ path('app_appartement_show', {'id': appartement.id}) }}">
+													<i class="fe fe-pencil"></i>Modifier</a>
+												<form class="d-inline" method="post" action="{{ path('app_appartement_delete', {'id': appartement.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+													<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ (appartement.id ?? '')) }}">
+													<button class="btn btn-sm bg-danger-light">
+														<i class="fe fe-trash"></i>Supprimer
+													</button>
+												</form>
+
+											</div>
+										</td>
+									</tr>
+
+								{% else %}
+									<tr>
+										<td colspan="3">Pas De Resideces Ajouter une nouvelle</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

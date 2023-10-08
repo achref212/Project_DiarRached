@@ -1,0 +1,622 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résidence IRIS1
+{% endblock %}
+{% block header %}
+	<header id="header" class="header-section">
+		<div class="container">
+
+			<nav class="navbar ">
+				<a href="{{ path('app_homepage') }}" class="navbar-brand"><img src="{{asset ('assets/img/ppp/logo.png')}}" alt="Arkit"></a>
+				<div class="d-flex menu-wrap">
+					<div id="mainmenu" class="mainmenu">
+						<ul class="nav">
+							<li>
+								<a data-scroll href="{{ path('app_homepage') }}">Accueil
+									<span class="sr-only">(current)</span>
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('A_propos') }}">A Propos</a>
+							</li>
+							<li>
+								<a href="{{path('app_reservation_new')}}">Réserver</a>
+							</li>
+							<li>
+								<a class="nav-link active" href="{{path('app_residence_index1')}}">PROJETS EN COURS</a>
+
+							</li>
+							<li>
+								<a href="#">Nos Références
+								</a>
+								<ul class="widget-links">
+									<li>
+										<a href="{{ path('Diar_Rached') }}">Résidence Diar Rached</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_City')}}">Résidence Kacem City</a>
+									</li>
+									<li>
+										<a href="{{path('Halima')}}">Résidence Halima</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_Palace')}}">Résidence Kacem Palace</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="{{path('contact')}}">Contact</a>
+							</li>
+							<li class="phone">
+								<i class="fa fa-phone"></i>
+								(+216) 20 929 999</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--.header-section -->
+{% endblock %}
+{% block body %}
+
+<style>
+	.row {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin-right: -15px;
+		margin-left: -15px
+	}
+	.profile-menu1 {
+		background-color: #ffffff;
+		width: 760px;
+		height: auto;
+	}
+	.col-sm-44 {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 33.333333%;
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%
+	}
+	.project-single-section2 {
+		position: relative;
+		z-index: 1;
+		background-color: #f9fafa;
+	}
+	.bg-grey1 {
+		background-color: #f9fafa;
+	}
+</style>
+<link rel="stylesheet" href="{{asset ('assets/css/main.css')}}">
+
+<section class="page-header1 padding">
+	<div class="container">
+		<div class="page-content text-center">
+			<h2>Résidence IRIS 1</h2>
+
+		</div>
+	</div>
+</section>
+<!--/.page-header-->
+
+
+<section class="project-single-section2 bg-grey1 padding">
+	<div class="col-md-2 padding-9">
+		<input type="text" id="searchQueryInput" placeholder="Search..." aria-label="Search" class="form-control">
+	</div>
+	<div class="dots"></div>
+	<div class="container">
+		<div class="row project-single-wrap">
+
+			<div class="col-sm-4 padding-15">
+				<div id="project-single-carousel" class="project-single-carousel owl-carousel">
+					<div class="single-carousel">
+						<img src="{{asset ('assets/img/ppp/iris1/aff11.jpg')}}" alt="img">
+					</div>
+					<div class="single-carousel">
+						<img src="{{asset ('assets/img/ppp/iris1/aff12.jpg')}}" alt="img">
+					</div>
+					<div class="single-carousel">
+						<img src="{{asset ('assets/img/ppp/iris1/aff13.jpg')}}" alt="img">
+					</div>
+					<div class="single-carousel">
+						<img src="{{asset ('assets/img/ppp/iris1/aff4.jpg')}}" alt="img">
+					</div>
+					<div class="single-carousel">
+						<img src="{{asset ('assets/img/ppp/iris1/aff14.jpg')}} " alt="img">
+					</div>
+				</div>
+
+
+			</div>
+
+
+			<div class="profile-menu1">
+
+				<div class="tab-pane fade show active" id="s" style="width: 500px;">
+
+					<ul class="nav nav-tabs nav-tabs-solid3" style="width: 760px;">
+						<br><br>
+						<li class="nav-item">
+							<a class="nav-link active" data-toggle="tab" href="#1" style="font-size:15px;">s+1</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " data-toggle="tab" href="#2" style="font-size:15px;">s+2</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#3" style="font-size:15px;" style="position:static;">s+3</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#Commercial" style=" width: 120px;">Commercial</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#Bureau" style="font-size:15px;">Bureau</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" style"width: 150px;" data-toggle="tab" href="#Jardin" style="font-size:15px;">Jardin d'enfant</a>
+						</li>
+
+					</ul>
+				</div>
+
+				<br>
+
+				<!-- Personal Details Tab -->
+				<div class="tab-content profile-tab-cont">
+					<div class="tab-pane fade show active" id="1">
+
+						<table class="table" border="2" style="width: 750px;" align="align-items-center ">
+							<thead>
+								<tr>
+
+									<th class="text-center">Nom</th>
+									<th class="text-center">Étage</th>
+									<th class="text-center">Type</th>
+									<th class="text-center">Surface</th>
+									<th class="text-center">État</th>
+									<th class="text-center">Plan</th>
+									<th class="text-center" style="font-size:14px;">Plan Étage</th>
+									<th class="text-center">Réserver</th>
+								</tr>
+							</thead>
+							<tbody>
+								<div id="searchResults">
+									{% for appartement in searchResults %}
+
+										{% if appartement.type == 'S+1' and appartement.etat == 'Disponible' %}
+											<tr>
+												<td class="text-center">{{ appartement.nom }}</td>
+												<td class="text-center">{{ appartement.etage|replace({'etage': 'Étage'}) }}</td>
+												<td class="text-center">{{ appartement.type }}</td>
+												<td class="text-center">{{ appartement.surface }}m²</td>
+												<td class="text-center">{{ appartement.etat }}</td>
+												<td class="text-center">
+													{% if appartement.image %}
+														<a href="{{ vich_uploader_asset(appartement, 'imageFile') }}" class="btn-outline-primary img-popup" data-gall="myGallery">Voir Plan</a>
+													{% else %}
+														No Image
+													{% endif %}
+												</td>
+												<td class="text-center">
+													{% if appartement.imageetage %}
+														<a href="{{ vich_uploader_asset(appartement, 'imageFileetage') }}" class="btn-outline-primary img-popup" data-gall="myGallery">Voir Plan</a>
+													{% else %}
+														No Image
+													{% endif %}
+												</td>
+												<td class="text-center">
+													<a href="{{ path('app_reservation_new1', {'appartement': appartement.id, 'residence': appartement.residence.id}) }}">
+														<button class="btn-info">Réserver</button>
+													</a>
+
+												</td>
+											</tr>
+
+										{% endif %}
+
+									{% endfor %}
+								</div>
+							</tbody>
+
+						</table>
+						<div class="col-sm-12 col-md-7 text-left">{{ knp_pagination_render(appartements1,'@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}</div>
+
+					</div>
+					<div class="tab-pane fade" id="2">
+
+						<table class="table" border="2" style="width: 700px;" align="align-items-center ">
+							<thead>
+								<tr>
+
+									<th class="text-center">Nom</th>
+									<th class="text-center">Étage</th>
+									<th class="text-center">Type</th>
+									<th class="text-center">Surface</th>
+									<th class="text-center">État</th>
+									<th class="text-center">Plan</th>
+									<th class="text-center">Réserver</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for appartement in appartements2  %}
+
+									{% if appartement.type == 'S+2'  and appartement.etat == 'Disponible' %}
+										<tr>
+											<td class="text-center">{{ appartement.nom }}</td>
+											<td class="text-center">{{ appartement.etage|replace({'etage': 'Étage'}) }}</td>
+											<td class="text-center">{{ appartement.type }}</td>
+											<td class="text-center">{{ appartement.surface }}m²</td>
+											<td class="text-center">{{ appartement.etat }}</td>
+											<td class="text-center">
+												{% if appartement.image %}
+													<a href="{{ vich_uploader_asset(appartement, 'imageFile') }}" class="btn-outline-primary img-popup" data-gall="myGallery">Voir Plan</a>
+												{% else %}
+													No Image
+												{% endif %}
+											</td>
+											<td class="text-center">
+												<a href="{{ path('app_reservation_new1', {'appartement': appartement.id, 'residence': appartement.residence.id}) }}">
+													<button class="btn-info">Réserver</button>
+												</a>
+
+											</td>
+										</tr>
+									{% endif %}
+
+								{% endfor %}
+							</tbody>
+						</table>
+						<div class="col-sm-12 col-md-7 text-left">{{ knp_pagination_render(appartements2,'@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}</div>
+
+					</div>
+					<div class="tab-pane fade" id="3">
+
+						<table class="table" border="2" style="width: 700px;" align="align-items-center ">
+							<thead>
+								<tr>
+
+									<th class="text-center">Nom</th>
+									<th class="text-center">Étage</th>
+									<th class="text-center">Type</th>
+									<th class="text-center">Surface</th>
+									<th class="text-center">État</th>
+									<th class="text-center">Plan</th>
+									<th class="text-center">Réserver</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for appartement in appartements3 %}
+
+									{% if appartement.type == 'S+3' and appartement.etat == 'Disponible' %}
+										<tr>
+											<td class="text-center">{{ appartement.nom }}</td>
+											<td class="text-center">{{ appartement.etage|replace({'etage': 'Étage'}) }}</td>
+											<td class="text-center">{{ appartement.type }}</td>
+											<td class="text-center">{{ appartement.surface }}m²</td>
+											<td class="text-center">{{ appartement.etat }}</td>
+											<td class="text-center">
+												{% if appartement.image %}
+													<a href="{{ vich_uploader_asset(appartement, 'imageFile') }}" class="btn-outline-primary img-popup" data-gall="myGallery">Voir Plan</a>
+												{% else %}
+													No Image
+												{% endif %}
+											</td>
+											<td class="text-center">
+												<a href="{{ path('app_reservation_new1', {'appartement': appartement.id, 'residence': appartement.residence.id}) }}">
+													<button class="btn-info">Réserver</button>
+												</a>
+
+											</td>
+										</tr>
+									{% endif %}
+
+								{% endfor %}
+							</tbody>
+						</table>
+						<div class="col-sm-12 col-md-7 text-left">{{ knp_pagination_render(appartements3,'@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}</div>
+
+					</div>
+					<div class="tab-pane fade" id="Commercial">
+
+						<table class="table" border="2" style="width: 700px;" align="align-items-center ">
+							<thead>
+								<tr>
+
+									<th class="text-center">Nom</th>
+									<th class="text-center">Étage</th>
+									<th class="text-center">Type</th>
+									<th class="text-center">Surface</th>
+									<th class="text-center">État</th>
+									<th class="text-center">Plan</th>
+									<th class="text-center">Réserver</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for appartement in appartementsc %}
+
+									{% if appartement.type == 'Commercial' and appartement.etat == 'Disponible' %}
+										<tr>
+											<td class="text-center">{{ appartement.nom }}</td>
+											<td class="text-center">{{ appartement.etage|replace({'etage': 'Étage'}) }}</td>
+											<td class="text-center">{{ appartement.type }}</td>
+											<td class="text-center">{{ appartement.surface }}m²</td>
+											<td class="text-center">{{ appartement.etat }}</td>
+											<td class="text-center">
+												{% if appartement.image %}
+													<a href="{{ vich_uploader_asset(appartement, 'imageFile') }}" class="btn-outline-primary img-popup" data-gall="myGallery">Voir Plan</a>
+												{% else %}
+													No Image
+												{% endif %}
+											</td>
+											<td class="text-center">
+												<a href="{{ path('app_reservation_new1', {'appartement': appartement.id, 'residence': appartement.residence.id}) }}">
+													<button class="btn-info">Réserver</button>
+												</a>
+
+											</td>
+										</tr>
+									{% endif %}
+
+								{% endfor %}
+							</tbody>
+						</table>
+						<div class="col-sm-12 col-md-7 text-left">{{ knp_pagination_render(appartementsc,'@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}</div>
+
+					</div>
+					<div class="tab-pane fade" id="Bureau">
+
+						<table class="table" border="2" style="width: 700px;" align="align-items-center ">
+							<thead>
+								<tr>
+
+									<th class="text-center">Nom</th>
+									<th class="text-center">Étage</th>
+									<th class="text-center">Type</th>
+									<th class="text-center">Surface</th>
+									<th class="text-center">État</th>
+									<th class="text-center">Plan</th>
+									<th class="text-center">Réserver</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for appartement in appartementsb %}
+
+									{% if appartement.type == 'Bureau' and appartement.etat == 'Disponible' %}
+										<tr>
+											<td class="text-center">{{ appartement.nom }}</td>
+											<td class="text-center">{{ appartement.etage|replace({'etage': 'Étage'}) }}</td>
+											<td class="text-center">{{ appartement.type }}</td>
+											<td class="text-center">{{ appartement.surface }}m²</td>
+											<td class="text-center">{{ appartement.etat }}</td>
+											<td class="text-center">
+												{% if appartement.image %}
+													<a href="{{ vich_uploader_asset(appartement, 'imageFile') }}" class="btn-outline-primary img-popup" data-gall="myGallery">Voir Plan</a>
+												{% else %}
+													No Image
+												{% endif %}
+											</td>
+											<td class="text-center">
+												<a href="{{ path('app_reservation_new1', {'appartement': appartement.id, 'residence': appartement.residence.id}) }}">
+													<button class="btn-info">Réserver</button>
+												</a>
+
+											</td>
+										</tr>
+									{% endif %}
+
+								{% endfor %}
+							</tbody>
+						</table>
+						<div class="col-sm-12 col-md-7 text-left">{{ knp_pagination_render(appartementsb,'@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}</div>
+
+					</div>
+					<div class="tab-pane fade" id="Jardin">
+
+						<table class="table" border="2" style="width: 700px;" align="align-items-center ">
+							<thead>
+								<tr>
+
+									<th class="text-center">Nom</th>
+									<th class="text-center">Étage</th>
+									<th class="text-center">Type</th>
+									<th class="text-center">Surface</th>
+									<th class="text-center">État</th>
+									<th class="text-center">Plan</th>
+									<th class="text-center">Réserver</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for appartement in appartementsj %}
+
+									{% if appartement.type == 'Jardin d\'enfant' and appartement.etat == 'Disponible' %}
+											<tr>
+												<td class="text-center">{{ appartement.nom }}</td>
+											<td class="text-center">{{ appartement.etage|replace({'etage': 'Étage'}) }}</td>
+											<td class="text-center">{{ appartement.type }}</td>
+											<td class="text-center">{{ appartement.surface }}m²</td>
+											<td class="text-center">{{ appartement.etat }}</td>
+												<td class="text-center">
+													{% if appartement.image %}
+														<a href="{{ vich_uploader_asset(appartement, 'imageFile') }}" class="btn-outline-primary img-popup" data-gall="myGallery">Voir Plan</a>
+													{% else %}
+														No Image
+													{% endif %}
+												</td>
+												<td class="text-center">
+													<a href="{{ path('app_reservation_new1', {'appartement': appartement.id, 'residence': appartement.residence.id}) }}">
+														<button class="btn-info">Réserver</button>
+													</a>
+
+												</td>
+											</tr>
+										{% endif %}
+
+									{% endfor %}
+								</tbody>
+							</table>
+							<div class="col-sm-12 col-md-7 text-left">{{ knp_pagination_render(appartementsj,'@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="projects-section padding">
+		<div class="container">
+		<div class="section-heading text-center mb-40">
+			<span>intérieur</span>
+			<!--<h2>Related works</h2>-->
+		</div>
+		<!--/.section-heading-->
+		<div id="projects-carousel" class="projects-carousel owl-carousel">
+			<div class="project-item">
+				<img id="img" src="{{asset ('assets/img/ppp/AOUINA/interieur/salon1.jpg')}}" alt="projects">
+				<div class="overlay"></div>
+				<a href="{{asset ('assets/img/ppp/AOUINA/interieur/C_03 SALON.jpg')}}" class="view-icon img-popup" data-gall="myGallery1">
+					<i class="fas fa-expand"></i>
+				</a>
+				<div
+					class="projects-content">
+					<!--<a href="#" class="category">Interior</a>-->
+					<h3>
+						<a href="#" class="tittle">Salon</a>
+					</h3>
+				</div>
+			</div>
+			<div class="project-item">
+				<img src="{{asset ('assets/img/ppp/AOUINA/interieur/salon2.jpg')}}" alt="projects">
+				<div class="overlay"></div>
+				<a href="{{asset ('assets/img/ppp/AOUINA/interieur/C_01 SALON.jpg')}}" class="view-icon img-popup" data-gall="myGallery1">
+					<i class="fas fa-expand"></i>
+				</a>
+				<div class="projects-content">
+
+					<h3>
+						<a href="#" class="tittle">Salon</a>
+					</h3>
+				</div>
+			</div>
+			<div class="project-item">
+				<img src="{{asset ('assets/img/ppp/AOUINA/interieur/chP.jpg')}}" alt="projects">
+				<div class="overlay"></div>
+				<a href="{{asset ('assets/img/ppp/AOUINA/interieur/C_08 CH P.jpg')}}" class="view-icon img-popup" data-gall="myGallery1">
+					<i class="fas fa-expand"></i>
+				</a>
+				<div
+					class="projects-content">
+					<!--<a href="#" class="category">Architecture</a>-->
+					<h3>
+						<a href="#" class="tittle">chambre Parents</a>
+					</h3>
+				</div>
+			</div>
+			<div class="project-item">
+				<img src="{{asset ('assets/img/ppp/AOUINA/interieur/bainP.jpg')}}" alt="projects">
+				<div class="overlay"></div>
+				<a href="{{asset ('assets/img/ppp/AOUINA/interieur/C_14 bath.jpg')}}" class="view-icon img-popup" data-gall="myGallery1">
+					<i class="fas fa-expand"></i>
+				</a>
+
+				<div class="projects-content">
+					<a href="#" class="category">Parents</a>
+					<h3>
+						<a href="#" class="tittle">Salle De Bain</a>
+					</h3>
+				</div>
+			</div>
+
+			<div class="project-item">
+				<img src="{{asset ('assets/img/ppp/AOUINA/interieur/chambre1.jpg')}}" alt="projects">
+				<div class="overlay"></div>
+				<a href="{{asset ('assets/img/ppp/AOUINA/interieur/C_06 CH.jpg')}}" class="view-icon img-popup" data-gall="myGallery1">
+					<i class="fas fa-expand"></i>
+				</a>
+
+				<div class="projects-content">
+
+					<h3>
+						<a href="#" class="tittle">Chambre</a>
+					</h3>
+				</div>
+			</div>
+
+			<div class="project-item">
+				<img src="{{asset ('assets/img/ppp/AOUINA/interieur/chambre-inv2.jpg')}}" alt="projects">
+				<div class="overlay"></div>
+				<a href="{{asset ('assets/img/ppp/AOUINA/interieur/C_11 B.jpg')}}" class="view-icon img-popup" data-gall="myGallery1">
+					<i class="fas fa-expand"></i>
+				</a>
+				<div class="projects-content">
+
+					<h3>
+						<a href="#" class="tittle">Chambre</a>
+					</h3>
+				</div>
+			</div>
+			<div class="project-item">
+				<img src="{{asset ('assets/img/ppp/AOUINA/interieur/bain-Inv2.jpg')}}" alt="projects">
+				<div class="overlay"></div>
+				<a href="{{asset ('assets/img/ppp/AOUINA/interieur/C_05 CH.jpg')}}" class="view-icon img-popup" data-gall="myGallery1">
+					<i class="fas fa-expand"></i>
+				</a>
+				<div class="projects-content">
+
+					<h3>
+						<a href="#" class="tittle">Salle De Bain</a>
+					</h3>
+				</div>
+			</div>
+			<div class="project-item">
+				<img src="{{asset ('assets/img/ppp/AOUINA/interieur/kitchen1.jpg')}}" alt="projects">
+				<div class="overlay"></div>
+				<a href="{{asset ('assets/img/ppp/AOUINA/interieur/C_09 KITCH.jpg')}}" class="view-icon img-popup" data-gall="myGallery1">
+					<i class="fas fa-expand"></i>
+				</a>
+				<div
+					class="projects-content">
+					<!--<a href="#" class="category">Design</a>-->
+					<h3>
+						<a href="#" class="tittle">Cuisine</a>
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section><!--/.projects-section--><section class="projects-section padding">
+		<div class="align-center" style="margin: 0 auto">
+			<video width="750" height="400" controls>
+				<source src="{{asset ('assets/img/ppp/AOUINA/interieur/C.mp4')}}" type="video/mp4">
+			</video>
+		</div>
+	</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function performSearch() {
+        // Get the search query from the input field
+        var searchQuery = $('#searchQueryInput').val();
+
+        // Make an Ajax request to your Symfony controller
+        $.ajax({
+            url: "{{ path('app_search') }}", // Update to match your route
+            type: "GET",
+            data: { search: searchQuery },
+            dataType: "json",
+            success: function(response) {
+                // Handle the response data, which will contain the search results
+                // You can update your HTML to display these results dynamically
+                console.log(response);
+
+                // For example, update a div with the search results
+                $('#searchResults').html('<pre>' + JSON.stringify(response, null, 2) + '</pre>');
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    }
+</script>
+{% endblock %}

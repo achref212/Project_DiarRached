@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A Propos
+{% endblock %}
+{% block header %}
+	<header id="header" class="header-section">
+		<div class="container">
+
+			<nav class="navbar ">
+				<a href="{{ path('app_homepage') }}" class="navbar-brand"><img src="{{asset ('assets/img/ppp/logo.png')}}" alt="Arkit"></a>
+				<div class="d-flex menu-wrap">
+					<div id="mainmenu" class="mainmenu">
+						<ul class="nav">
+							<li>
+								<a href="{{ path('app_homepage') }}">Accueil
+									<span class="sr-only">(current)</span>
+								</a>
+							</li>
+							<li>
+								<a data-scroll class="nav-link active" href="{{ path('A_propos') }}">A Propos</a>
+
+							</li>
+							<li>
+								<a href="{{path ('app_reservation_new')}}">Réserver</a>
+							</li>
+							<li>
+								<a href="{{path('app_residence_index1')}}">PROJETS EN COURS</a>
+
+							</li>
+							<li>
+								<a href="#">Nos Références
+								</a>
+								<ul class="widget-links">
+									<li>
+										<a href="{{path('Diar_Rached')}}">Résidence Diar Rached</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_City')}}">Résidence Kacem City</a>
+									</li>
+									<li>
+										<a href="{{path('Halima')}}">Résidence Halima</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_Palace')}}">Résidence Kacem Palace</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="{{path('contact')}}">Contact</a>
+							</li>
+							<li class="phone">
+								<i class="fa fa-phone"></i>
+								(+216) 20 929 999</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--.header-section -->
+{% endblock %}
+{% block body %}
+	<style>
+		.row {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			margin-right: -15px;
+			margin-left: -15px
+		}
+	</style>
+	<section class="about-section padding">
+		<div class="container">
+			<div class="row about-wrap d-flex align-items-center">
+				<div class="col-md-6 xs-padding">
+					<div class="about-content">
+						<h2>A Propos</h2>
+						<p>Par son expérience et ses savoir-faire, l’Immobilière DIAR RACHED a le pouvoir de concevoir
+																																																																																																																																																																																																				                            et de réaliser un projet en totale adéquation avec les attentes de ses clients et
+																																																																																																																																																																																																				                            partenaires.
+						</p>
+						<h4>L’Immobilière DIAR RACHED est ainsi en mesure de proposer :</h4>
+						<p>• Des emplacements soigneusement sélectionnés selon des critères exigeants : demande
+																																																																																																																																																																																																				                            locative, proximité des écoles, des commerces et des transports, présence d’espaces
+																																																																																																																																																																																																				                            verts…autant d’éléments qui améliorent la qualité de vie et sécurisent l’investissement.
+						</p>
+						<p>• Des résidences répondant aux normes énergétiques en vigueur et adaptées aux besoins
+																																																																																																																																																																																																				                            actuels.
+						</p>
+						<p>• Des architectures contemporaines ou classiques, qui, dans leurs volumes et leurs matériaux,
+																																																																																																																																																																																																				                            s’intègrent parfaitement dans leur environnement renforçant ainsi le caractère résidentiel.
+						</p>
+						<p>• Des aménagements extérieurs (jardins, espaces verts) qui valorisent le cadre de vie.</p>
+						<p>
+							• Des espaces intérieurs conçus avec les mêmes critères de qualité : plans fonctionnels,
+																																																																																																																																																																																																				                            séjours lumineux et prestations de qualité pour un plus grand confort et bien-être durable.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-5 xs-padding">
+					<div class="about1-bg">
+						<div class="about1-bg"></div>
+						<div class="dots"></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--/.about-section-->{% endblock %}

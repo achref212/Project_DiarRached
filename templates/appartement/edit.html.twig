@@ -1,0 +1,213 @@
+{% extends 'Admin.html.twig' %}
+
+{% block title %}Appartements
+{% endblock %}
+{% block Sidebar %}
+	<!-- Sidebar -->
+	<div class="sidebar" id="sidebar">
+		<div class="sidebar-inner slimscroll">
+			<div id="sidebar-menu" class="sidebar-menu">
+				<ul>
+
+					<li>
+						<a href="{{ path('app_homeAdmin') }}">
+							<i class="fe fe-star"></i>
+							<span>Tableau de bord</span>
+						</a>
+					</li>
+
+					<li class="active">
+						<a href="{{ path('app_residence_new') }}">
+							<i class="fe fe-home"></i>
+							<span>Résidences</span>
+						</a>
+					</li>
+					<li>
+						<a href="{{ path('app_reservation_index') }}">
+							<i class="fe fe-document"></i>
+							<span>Reservation</span>
+						</a>
+					</li>
+					<li>
+						<a href="{{ path('app_message') }}">
+							<i class="fe fe-mail"></i>
+							<span>Message</span>
+						</a>
+					</li>
+					<li>
+						<a href="{{path ('profile')}}">
+							<i class="fe fe-user-plus"></i>
+							<span>Profile</span>
+						</a>
+					</li>
+
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /Sidebar -->
+{% endblock %}
+{% block pageheader %}
+	<!-- Page Header -->
+	<div class="page-header">
+		<div class="row">
+			<div class="col-sm-7 col-auto">
+				<h3 class="page-title">Appartements</h3>
+				<ul class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a href="{{ path('app_homeAdmin') }}">Tableau de bord</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a href="{{ path('app_residence_new') }}">Résidences</a>
+					</li>
+					<li class="breadcrumb-item active">Appartements</li>
+				</ul>
+			</div>
+			<div class="col-sm-5 col">
+				<a href="{{ path('app_appartement_new1', {'id': residence.id}) }}" class="btn btn-primary float-right mt-2">Add</a>
+
+			</div>
+		</div>
+	</div>
+	<!-- /Page Header -->
+{% endblock %}
+{% block body %}
+
+	<style>
+
+		.form-select1 {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			font-size: 16px;
+			font-family: Arial, sans-serif;
+			font-weight: normal;
+			color: #333;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-sizing: border-box;
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333%3E%3C/svg%3E');
+			background-repeat: no-repeat;
+			background-position: right 10px center;
+		}
+	</style>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="table-responsive">
+
+
+						<table class="table mb-0">
+							<thead>
+								<tr>
+
+									<th>Nom</th>
+									<th>Etage</th>
+									<th>Type</th>
+									<th>Surface</th>
+									<th>Etat</th>
+									<th>Image</th>
+									<th class=" text-right">actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for appartement in appartements %}
+
+									<tr>
+
+										<td>{{ appartement.nom }}</td>
+										<td>{{ appartement.etage }}</td>
+										<td>{{ appartement.type }}</td>
+										<td>{{ appartement.surface }}</td>
+										<td>{{ appartement.etat }}</td>
+										<td>
+											{% if appartement.image %}
+												<a href="{{ vich_uploader_asset(appartement, 'imageFile') }}" class="btn-outline-primary img-popup" data-gall="myGallery">Voir Plan</a>
+											{% else %}
+												No Image
+											{% endif %}
+										</td>
+										<td class="text-right">
+											<div class="actions">
+												<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_residence_details">
+													<i class="fe fe-pencil"></i>
+													Modifier
+												</a>
+												<form class="d-inline" method="post" action="{{ path('app_appartement_delete', {'id': appartement.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+													<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ (appartement.id ?? '')) }}">
+													<button class="btn btn-sm bg-danger-light">
+														<i class="fe fe-trash"></i>Supprimer
+													</button>
+												</form>
+
+											</div>
+										</td>
+									</tr>
+
+								{% else %}
+									<tr>
+										<td colspan="3">Pas De appartement Ajouter une nouvelle</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+						<div class="col-sm-12 col-md-7 text-left">{{ knp_pagination_render(appartements,'@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Edit Details Modal -->
+	<div class="modal fade" id="edit_residence_details" aria-hidden="true" role="dialog">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Edit Residence</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					{{ form_start(form,{'attr': {'novalidate':'novalidate'}}) }}
+					<form>
+						<div class="row form-row">
+							<div class="col-12 col-sm-12">
+								<div class="form-group">
+									<label>Appartement</label>
+									{{form_widget(form.nom,{'attr':{'class':'form-control', 'placeholder': 'Nom'}})}}
+									<label>Etage</label>
+									{{form_widget(form.etage,{'attr':{'class':'form-select1'}})}}
+									<label>Type</label>
+									{{form_widget(form.type,{'attr':{'class':'form-select1'}})}}
+									<label>Surface</label>
+									{{form_widget(form.surface,{'attr':{'class':'form-control', 'placeholder': 'Surface'}})}}
+									<label>Etat</label>
+									{{form_widget(form.etat,{'attr':{'class':'form-select1'}})}}
+
+									<label>Plan</label>
+									{{ form_widget(form.imageFile, {'attr': {'class': 'form-control '}}) }}
+								</div>
+							</div>
+
+
+						</div>
+						{{ form_widget(form.Save, {'attr': {'class':'btn btn-primary btn-block'} })}}
+					</form>
+					{{ form_end(form) }}
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Edit Details Modal -->
+
+{% endblock %}

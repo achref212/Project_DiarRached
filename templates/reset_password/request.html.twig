@@ -1,0 +1,40 @@
+{% extends 'baseLogin.html.twig' %}
+
+{% block title %}Changer Mot De Passe
+{% endblock %}
+
+{% block body %}
+	<div class="main-wrapper login-body">
+		<div class="login-wrapper">
+			<div class="container">
+				<div class="loginbox">
+					<div class="login-left">
+						<img class="img-fluid" src="{{asset ('assets/img/ppp/logo.png')}}" alt="Logo">
+					</div>
+					<div class="login-right">
+						<div class="login-right-wrap">
+							<h1>Changer Votre Mot De Passe</h1>
+							<p class="account-subtitle">Entrez votre adresse e-mail, et nous vous enverrons un lien pour réinitialiser votre mot de passe.</p>
+							{% for flash_error in app.flashes('reset_password_error') %}
+								<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+							{% endfor %}
+
+
+							{{ form_start(requestForm) }}
+							{{ form_row(requestForm.email, {'attr': {'class': 'form-control'}}) }}
+
+							<br>
+							<button class="btn btn-primary btn-block btn-lg login-btn">Envoyer</button>
+							<div class="text-center dont-have">Rappelez-vous votre mot de passe ?<a href="{{path ('app_login')}}">Connexion</a>
+							</div>
+						</div>
+					</div>
+
+					{{ form_end(requestForm) }}
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+<img src="https://assets.unlayer.com/stock-templates1690216622551-logo2.png" width="60" height="60" alt="Logo">
+
+<p>Pour réinitialiser votre mot de passe, veuillez visiter le lien suivant</p>
+
+<a href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
+
+<p>Ce lien expirera dans
+	{{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+
+<h4>Contact</h4>
+<ul>
+	<li>16 Boulevard de l'environnement, l'aouina</li>
+	<li>immob.diyar.rached@gmail.com</li>
+	<li>(+216) 20 929 999</li>
+	<li>(+216) 24 727 205</li>
+	<li>(+216) 24 727 628</li>
+</ul>

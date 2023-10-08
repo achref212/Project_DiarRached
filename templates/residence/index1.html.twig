@@ -1,0 +1,136 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projects
+{% endblock %}
+
+{% block header %}
+
+	<header id="header" class="header-section">
+		<div class="container">
+
+			<nav class="navbar ">
+				<a href="{{ path('app_homepage') }}" class="navbar-brand"><img src="{{asset ('assets/img/ppp/logo.png')}}" alt="Arkit"></a>
+				<div class="d-flex menu-wrap">
+					<div id="mainmenu" class="mainmenu">
+						<ul class="nav">
+							<li>
+								<a data-scroll href="{{ path('app_homepage') }}">Accueil
+									<span class="sr-only">(current)</span>
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('A_propos') }}">A Propos</a>
+							</li>
+							<li>
+								<a href="{{path('app_reservation_new')}}">Réserver</a>
+							</li>
+							<li>
+								<a class="nav-link active" href="{{path('app_residence_index1')}}">PROJETS EN COURS</a>
+
+							</li>
+							<li>
+								<a href="#">Nos Références
+								</a>
+								<ul class="widget-links">
+									<li>
+										<a href="{{ path('Diar_Rached') }}">Résidence Diar Rached</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_City')}}">Résidence Kacem City</a>
+									</li>
+									<li>
+										<a href="{{path('Halima')}}">Résidence Halima</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_Palace')}}">Résidence Kacem Palace</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="{{path('contact')}}">Contact</a>
+							</li>
+							<li class="phone">
+								<i class="fa fa-phone"></i>
+								(+216) 20 929 999</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--.header-section -->
+{% endblock %}
+{% block body %}
+
+	<style>
+		.row {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			margin-right: -15px;
+			margin-left: -15px
+		}
+		.container2 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		.project-single-section2 {
+			position: relative;
+			z-index: 1;
+
+		}
+	</style>
+	<section class="project-single-section2">
+
+		<div class="container2" style="align-items: center;">
+
+			<div class="row project-single-wrap">
+
+
+				<div class="project-item2">
+
+
+					<div class="single-carousel">
+						<img src="{{asset ('assets/img/ppp/iris1/aff1.jpg')}}" alt="img">
+					</div>
+
+					<h2>IRIS 1</h2>
+
+					<a href="{{path('app_reservation_new')}}">
+						<button class="default-btn" style="float:left;">Réserver</button>
+					</a>
+					<a href="{{ path('app_appartement_index1') }}">
+						<button class="default-btn" style="float:right;">En Savoir Plus</button>
+					</a>
+				</div>
+
+
+				<div class="project-item2">
+					<div class="single-carousel">
+						<img src="{{asset ('assets/img/ppp/iris1/aff4.jpg')}}" alt="img1">
+					</div>
+
+					<h2>IRIS 2</h2>
+
+					<a href="{{path('app_reservation_new')}}">
+						<button class="default-btn" style="float:left;">Réserver</button>
+					</a>
+					<a href="{{ path('app_appartement_index') }}">
+						<button class="default-btn" style="float:right;">En Savoir Plus</button>
+					</a>
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+
+	</section>
+	<!--/.project-single-section-->
+{% endblock %}

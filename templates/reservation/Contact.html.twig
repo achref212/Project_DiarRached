@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation
+{% endblock %}
+{% block header %}
+	<header id="header" class="header-section">
+		<div class="container">
+
+			<nav class="navbar ">
+				<a href="{{ path('app_homepage') }}" class="navbar-brand"><img src="{{asset ('assets/img/ppp/logo.png')}}" alt="Arkit"></a>
+				<div class="d-flex menu-wrap">
+					<div id="mainmenu" class="mainmenu">
+						<ul class="nav">
+							<li>
+								<a data-scroll href="{{ path('app_homepage') }}">Accueil
+									<span class="sr-only">(current)</span>
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('A_propos') }}">A Propos</a>
+							</li>
+							<li>
+								<a href="{{path('app_reservation_new')}}">Réserver</a>
+							</li>
+							<li>
+								<a href="{{path('app_residence_index1')}}">PROJETS EN COURS</a>
+
+							</li>
+							<li>
+								<a href="#">Nos Références
+								</a>
+								<ul class="widget-links">
+									<li>
+										<a href="{{ path('Diar_Rached') }}">Résidence Diar Rached</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_City')}}">Résidence Kacem City</a>
+									</li>
+									<li>
+										<a href="{{path('Halima')}}">Résidence Halima</a>
+									</li>
+									<li>
+										<a href="{{path('Kacem_Palace')}}">Résidence Kacem Palace</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="nav-link active" href="{{path('contact')}}">Contact</a>
+							</li>
+							<li class="phone">
+								<i class="fa fa-phone"></i>
+								(+216) 20 929 999</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--.header-section -->
+{% endblock %}
+{% block body %}
+	<style>
+		.row {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			margin-right: -15px;
+			margin-left: -15px
+		}
+	</style>
+	<section class="contact-section bg-grey padding">
+		<div class="dots"></div>
+		<div class="container">
+			<div class="contact-wrap d-flex align-items-center row">
+				<div class="col-md-6 padding-15">
+					<div class="contact-info">
+
+						<h2>Prenez contact avec nous &
+							<br>envoyez-nous un message aujourd'hui !</h2>
+						<p>
+							<h3 style="color: rgb(209, 136, 77);">Adresse:</h3>
+							<h3>16 Boulevard de l'environnement, l'aouina</h3>
+
+						</p>
+
+						<h3 style="color: rgb(209, 136, 77);">Email:</h3>
+						<h3>immob.diyar.rached@gmail.com
+						</h3>
+						<h3 style="color: rgb(209, 136, 77);">Téléphone:</h3>
+						<h3>(+216) 20 929 999 / 24 727 205 / 24 727 628
+						</h3>
+
+
+					</div>
+				</div>
+				<div class="col-md-6 padding-15">
+					{{ form_start(form,{'attr': {'novalidate':'novalidate'}}) }}
+					<div class="contact-form">
+
+
+						<div class="form-group colum-row row">
+							<div class="col-sm-6">
+
+								{{form_widget(form.nom,{'attr':{'class':'form-control', 'placeholder': 'Nom*'}})}}
+								{{ form_errors(form.nom) }}
+							</div>
+							<div class="col-sm-6">
+
+								{{form_widget(form.prenom,{'attr':{'class':'form-control', 'placeholder': 'Prénom*'}})}}
+								{{ form_errors(form.prenom) }}
+							</div>
+						</div>
+						<div class="form-group colum-row row">
+							<div class="col-sm-6">
+
+								{{ form_widget(form.telephone, {'attr': {'class': 'form-control', 'placeholder': 'Téléphone*'}}) }}
+								{{ form_errors(form.telephone) }}
+
+							</div>
+							<div class="col-sm-6">
+
+								{{form_widget(form.email,{'attr':{'class':'form-control', 'placeholder': 'Email*'}})}}
+								{{ form_errors(form.email) }}
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-8">
+
+								{{ form_widget(form.message, {'attr': {'class': 'form-control message', 'placeholder': 'Message*', 'type': 'textarea'}}) }}
+								{{ form_errors(form.message) }}
+
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-12">
+								<button class="default-btn">{{ button_label|default('Save') }}</button>
+
+							</div>
+						</div>
+
+						<!--<a href="{{ path('app_reservation_index') }}">back to list</a>-->
+					</div>
+					{{ form_end(form) }}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/.contact-section-->
+{% endblock %}

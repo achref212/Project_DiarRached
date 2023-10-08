@@ -1,0 +1,100 @@
+{% extends 'baseLogin.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+	<div class="main-wrapper login-body">
+		<div class="login-wrapper">
+			<div class="container">
+				<div class="loginbox">
+					<div class="login-left">
+						<img class="img-fluid" src="{{asset ('assets/img/ppp/logo.png')}}" alt="Logo">
+					</div>
+					<div class="login-right">
+						<div class="login-right-wrap">
+							<h1>Register</h1>
+							<p class="account-subtitle">Access to our dashboard</p>
+
+							<!-- Form -->
+							{{ form_start(registrationForm,{'attr': {'novalidate':'novalidate'}}) }}
+							<!-- Register Form -->
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label">{{ form_label(registrationForm.email,"email")  }}</label>
+								<div class="col-lg-9">
+									{{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
+									{{ form_errors (registrationForm.email) }}
+								</div>
+							</div>
+
+
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label">{{ form_label(registrationForm.imageFile,"imageFile") }}</label>
+								<div class="col-lg-9">
+									{{ form_widget(registrationForm.imageFile, {'attr': {'class': 'form-control-file'}}) }}
+									{{ form_errors (registrationForm.imageFile) }}
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label">{{ form_label(registrationForm.nom,"nom")  }}</label>
+								<div class="col-lg-9">
+									{{ form_widget(registrationForm.nom, {'attr': {'class': 'form-control'}}) }}
+									{{ form_errors(registrationForm.nom) }}
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label">{{ form_label(registrationForm.prenom,"prenom")  }}</label>
+								<div class="col-lg-9">
+									{{ form_widget(registrationForm.prenom, {'attr': {'class': 'form-control'}}) }}
+									{{ form_errors(registrationForm.prenom) }}
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label">{{ form_label(registrationForm.password.first, 'Password') }}</label>
+								<div class="col-lg-9">
+									{{ form_widget(registrationForm.password.first, {'attr': {'class': 'form-control'}}) }}
+									{{ form_errors(registrationForm.password.first) }}
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label">{{ form_label(registrationForm.password.second, 'Repeat') }}</label>
+								<div class="col-lg-9">
+									{{ form_widget(registrationForm.password.second, {'attr': {'class': 'form-control'}}) }}
+									{{ form_errors(registrationForm.password.second) }}
+								</div>
+							</div>
+							<div class="form-group row">
+
+								<div class="col-lg-9">
+
+									{{ form_errors(registrationForm.password, {'attr': {'class': 'form-control'}}) }}
+								</div>
+							</div>
+
+
+							{{ form_widget(registrationForm.Save, {'attr': {'class':'btn btn-primary w-100'} })}}
+							<div class="col-12">
+								<h6>Already have an account?
+									<a href="{{path ('app_login')}}">Log in</a>
+								</h6>
+							</div>
+
+							{{ form_end(registrationForm) }}
+
+						<!-- /Form -->
+
+
+							<!-- Social Login -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
