@@ -49,6 +49,37 @@ class IndexController extends AbstractController
         $Bureau = $appartementRepository->findBy(['type' => 'Bureau']);
         $JardinEnfant = $appartementRepository->findBy(['type' => 'Jardin d\'enfant']);
         $TypeCount = [count($S1), count($S2), count($S3), count($Commercial), count($Bureau), count($JardinEnfant)];
+        //S+1
+        $EtatS1Count = [];
+        $disponibles1 = $appartementRepository->findBy(['etat' => 'Disponible', 'type' => 'S+1']);
+        $vendus1 = $appartementRepository->findBy(['etat' => 'Vendu', 'type' => 'S+1']);
+        $EtatS1Count = [count($disponibles1), count($vendus1)];
+        //S+2
+        $EtatS2Count = [];
+        $disponibles2 = $appartementRepository->findBy(['etat' => 'Disponible', 'type' => 'S+2']);
+        $vendus2 = $appartementRepository->findBy(['etat' => 'Vendu', 'type' => 'S+2']);
+        $EtatS2Count = [count($disponibles2), count($vendus2)];
+        //S+3
+        $EtatS3Count = [];
+        $disponibles3 = $appartementRepository->findBy(['etat' => 'Disponible', 'type' => 'S+3']);
+        $vendus3 = $appartementRepository->findBy(['etat' => 'Vendu', 'type' => 'S+3']);
+        $EtatS3Count = [count($disponibles3), count($vendus3)];
+        //Jardin d\'enfant
+        $EtatJdCount = [];
+        $disponiblej = $appartementRepository->findBy(['etat' => 'Disponible', 'type' => 'Jardin d\'enfant']);
+        $venduj = $appartementRepository->findBy(['etat' => 'Vendu', 'type' => 'Jardin d\'enfant']);
+        $EtatJdCount = [count($disponiblej), count($venduj)];
+        //Commercial
+        $EtatComCount = [];
+        $disponiblecom = $appartementRepository->findBy(['etat' => 'Disponible', 'type' => 'Commercial']);
+        $venducom = $appartementRepository->findBy(['etat' => 'Vendu', 'type' => 'Commercial']);
+        $EtatComCount = [count($disponiblecom), count($venducom)];
+        //Bureau
+        $EtatBurCount = [];
+        $disponiblesbur = $appartementRepository->findBy(['etat' => 'Disponible', 'type' => 'Bureau']);
+        $vendusbur = $appartementRepository->findBy(['etat' => 'Vendu', 'type' => 'Bureau']);
+        $EtatBurCount = [count($disponiblesbur), count($vendusbur)];
+
 
         return $this->render(
             'Admin.html.twig',
@@ -56,7 +87,13 @@ class IndexController extends AbstractController
                 'AppartementCount' => json_encode($AppartementCount),
                 'EtatCount' => json_encode($EtatCount),
                 'MesgOrReservCount' => json_encode($MesgOrReservCount),
-                'TypeCount' => json_encode($TypeCount)
+                'TypeCount' => json_encode($TypeCount),
+                'EtatS1Count' => json_encode($EtatS1Count),
+                'EtatS2Count' => json_encode($EtatS2Count),
+                'EtatS3Count' => json_encode($EtatS3Count),
+                'EtatComCount' => json_encode($EtatComCount),
+                'EtatJdCount' => json_encode($EtatJdCount),
+                'EtatBurCount' => json_encode($EtatBurCount)
             ]
         );
     }

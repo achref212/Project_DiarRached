@@ -46,7 +46,7 @@ class AppartementType extends AbstractType
                     'Vendu' => 'Vendu',
                 ],
             ])
-            ->add('imageFileetage', VichImageType::class)
+
             ->add('imageFile', VichImageType::class)
 
             ->add('Save', SubmitType::class);

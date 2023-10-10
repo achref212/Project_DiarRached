@@ -33,8 +33,7 @@ class Appartement
 
     #[ORM\Column(length: 255)]
     private ?string $etat = null;
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $imageetage = null;
+
 
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageetage')]
     private ?File $imageFileetage = null;
@@ -147,17 +146,7 @@ class Appartement
         $this->imageFile = $imageFile;
     }
 
-    public function getImageetage(): ?string
-    {
-        return $this->imageetage;
-    }
 
-    public function setImageetage(?string $image_etage): static
-    {
-        $this->imageetage = $image_etage;
-
-        return $this;
-    }
     public function getImageFileetage(): ?File
     {
         return $this->imageFileetage;

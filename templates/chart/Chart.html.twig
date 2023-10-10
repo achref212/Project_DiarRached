@@ -71,6 +71,111 @@
 
 
 	</div>
+	<div class="row">
+
+
+		<div
+			class="col-md-12 col-lg-6">
+
+			<!-- Invoice Chart -->
+			<div class="card card-chart">
+				<div class="card-header">
+					<h4 class="card-title">S+1/ Etat</h4>
+				</div>
+				<div class="card-body">
+					<canvas id="EtatS1" width="400" height="100"></canvas>
+				</div>
+			</div>
+			<!-- /Invoice Chart -->
+
+		</div>
+
+		<div
+			class="col-md-12 col-lg-6">
+
+			<!-- Invoice Chart -->
+			<div class="card card-chart">
+				<div class="card-header">
+					<h4 class="card-title">S+2/ Etat</h4>
+				</div>
+				<div class="card-body">
+					<canvas id="EtatS2" width="400" height="100"></canvas>
+				</div>
+			</div>
+			<!-- /Invoice Chart -->
+
+		</div>
+	</div>
+	<div class="row">
+
+
+		<div
+			class="col-md-12 col-lg-6">
+
+			<!-- Invoice Chart -->
+			<div class="card card-chart">
+				<div class="card-header">
+					<h4 class="card-title">S+3/ Etat</h4>
+				</div>
+				<div class="card-body">
+					<canvas id="EtatS3" width="400" height="100"></canvas>
+				</div>
+			</div>
+			<!-- /Invoice Chart -->
+
+		</div>
+
+		<div
+			class="col-md-12 col-lg-6">
+
+			<!-- Invoice Chart -->
+			<div class="card card-chart">
+				<div class="card-header">
+					<h4 class="card-title">Commercial/ Etat</h4>
+				</div>
+				<div class="card-body">
+					<canvas id="EtatC" width="400" height="100"></canvas>
+				</div>
+			</div>
+			<!-- /Invoice Chart -->
+
+		</div>
+	</div>
+	<div class="row">
+
+
+		<div
+			class="col-md-12 col-lg-6">
+
+			<!-- Invoice Chart -->
+			<div class="card card-chart">
+				<div class="card-header">
+					<h4 class="card-title">Bureau/ Etat</h4>
+				</div>
+				<div class="card-body">
+					<canvas id="EtatB" width="400" height="100"></canvas>
+				</div>
+			</div>
+			<!-- /Invoice Chart -->
+
+		</div>
+
+		<div
+			class="col-md-12 col-lg-6">
+
+			<!-- Invoice Chart -->
+			<div class="card card-chart">
+				<div class="card-header">
+					<h4 class="card-title">Jardin/ Etat</h4>
+				</div>
+				<div class="card-body">
+					<canvas id="EtatJ" width="400" height="100"></canvas>
+				</div>
+			</div>
+			<!-- /Invoice Chart -->
+
+		</div>
+	</div>
 {% endblock %}
 
 {% block javascripts %}
@@ -93,6 +198,112 @@ backgroundColor: ["green", "pink"]
 ]
 }
 })
+
+
+let EtatS1 = document.querySelector("#EtatS1")
+let EtatS1Graph = new Chart(EtatS1, {
+type: "doughnut",
+data: {
+labels: [
+"Disponible", "Vendu"
+],
+datasets: [
+{
+label: "Etat S+1",
+data: {{ EtatS1Count|raw }},
+backgroundColor: ["silver", "yellow"]
+}
+]
+}
+})
+
+
+let EtatS2 = document.querySelector("#EtatS2")
+let EtatS2Graph = new Chart(EtatS2, {
+type: "doughnut",
+data: {
+labels: [
+"Disponible", "Vendu"
+],
+datasets: [
+{
+label: "Etat S+2",
+data: {{ EtatS2Count|raw }},
+backgroundColor: ["orange", "green"]
+}
+]
+}
+})
+
+let EtatS3 = document.querySelector("#EtatS3")
+let EtatS3Graph = new Chart(EtatS3, {
+type: "doughnut",
+data: {
+labels: [
+"Disponible", "Vendu"
+],
+datasets: [
+{
+label: "Etat S+3",
+data: {{ EtatS3Count|raw }},
+backgroundColor: ["turquoise", "red"]
+}
+]
+}
+})
+
+let EtatC = document.querySelector("#EtatC")
+let EtatCGraph = new Chart(EtatC, {
+type: "doughnut",
+data: {
+labels: [
+"Disponible", "Vendu"
+],
+datasets: [
+{
+label: "Etat Commercial",
+data: {{ EtatComCount|raw }},
+backgroundColor: ["beige", "teal"]
+}
+]
+}
+})
+
+
+let EtatB = document.querySelector("#EtatB")
+let EtatBGraph = new Chart(EtatB, {
+type: "doughnut",
+data: {
+labels: [
+"Disponible", "Vendu"
+],
+datasets: [
+{
+label: "Etat Bureau",
+data: {{ EtatBurCount|raw }},
+backgroundColor: ["gold", "olive"]
+}
+]
+}
+})
+
+let EtatJ = document.querySelector("#EtatJ")
+let EtatJGraph = new Chart(EtatJ, {
+type: "doughnut",
+data: {
+labels: [
+"Disponible", "Vendu"
+],
+datasets: [
+{
+label: "Etat S+2",
+data: {{ EtatJdCount|raw }},
+backgroundColor: ["brawn", "sienna"]
+}
+]
+}
+})
+
 
 let Residence = document.querySelector("#Residence")
 let ResidenceGraph = new Chart(Residence, {
